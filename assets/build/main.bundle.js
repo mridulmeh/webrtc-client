@@ -112,7 +112,7 @@ $(document).ready(() => {
     startGame();
   });
 });
-
+/** Function to initialize the game */
 function initGame() {
   window.mobileAndTabletcheck = function () {
     let check = false;
