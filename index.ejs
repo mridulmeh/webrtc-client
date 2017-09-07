@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- ??? -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- ??? -->
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		
+		<title>Game Streaming...</title>
+		 <link rel="stylesheet" type="text/css" href="symple.player.css">
+		 
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="mediaquery.css">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Include jQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include socket io, used by symple for signaling -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>			
+
+		<!-- Adapter.js, TODO: net address to always get the current one -->
+		<script src="adapter.js"></script>
+		
+		<!-- Include symple for signaling -->
+		<script type="text/javascript" src="symple.js"></script>
+		<script type="text/javascript" src="symple.client.js"></script>		
+			 
+		<!-- input handling -->
+		<script type="text/javascript" src="joystick.js"></script>
+		<script type="text/javascript" src="playGame.js"></script>
+		<script type="text/javascript" src="qrcode.js"></script>
+		
+		<!-- The actual WebRTC code -->
+		<script type="text/javascript" src="build/main.bundle.js"></script>
+			
+	
+	</head>
+	<body>
+    <!-- Username must fit to games target username(default = player1) -->
+	
+	<div id="QRCode">
+		<div id="QRCodeImg"></div>
+		<div class="glyphicon glyphicon-remove exitQR"></div>
+</div>
+	<div class="header">
+	
+		<div class="menu">
+			<span class="glyphicon glyphicon-chevron-down" id="menuDown" onclick="showDropdown()"></span>
+			<span class="glyphicon glyphicon-chevron-up" id="menuUp" onclick="showDropdown()"></span>
+			<div class="menuDropdown">
+				<ul>
+					<li onclick="showQRCode()">Scan QR Code</li>
+					<li onclick="changeToFullScreen()">Switch to full Screen</li>
+					<li><a href="/joystick/index.html" target="_blank">Get link for Gamepad</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="gameName">GAME DEMO</div>
+		<div class="player1">
+			<input type="text" id="playerName" value="player1" style="display:none"></input>
+			<button type="submit" id="ConnectBtn">CONNECT PLAYER ONE</button>
+			<button class="connected">PLAYER CONNECTED </button>
+		</div>
+	<!-- 	<div class="player2">
+			<input type="text" id="playerName" value="player2" style="display:none"></input>
+			<button type="submit" id="ConnectBtn">CONNECT PLAYER TWO</button>
+		</div> -->
+	</div>
+	<!-- Joysticks -->
+	<div class="left">
+		<div class="leftPointer"></div>
+	</div>	
+	<div class="right">
+		<div class="rightPointer"></div>
+	</div>
+	
+  <div id="tracker"></div>
+
+	<canvas class="pointerLock" id="myCanvas"></canvas>
+	<!-- video element -->
+    <div class="video-player">
+		<video id="StreamPlayer" autoplay></video>
+    </div>	
+	<div class="footer">
+	<div class="footerText">Click on the lock button to lock the screen</div>
+		<img src="arrows-expand.png" id="fullscreenButton"  class="onlySmall"  onclick="changeToFullScreen()">
+		<!-- <img src="arrows-contract.png" id="fullscreenButton" class="onlyFull" onclick="changeToSmallScreen()"> -->
+		<img src="settings.png" id="settings">
+		<img src="locked.png" id="locked" onclick="lockFullScreen()">
+		
+	</div>
+	<img src="unlocked.png" id="unlocked" onclick="unlockFullScreen()">
+	</body>
+</html>

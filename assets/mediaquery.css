@@ -1,0 +1,21 @@
+@media only screen and (max-width: 900px) {
+    body, .header, button, .glyphicon, li, li a {
+       font-size: 8px;
+    }
+	button{
+		font-size: 8px !important;
+		padding: 2px;
+	}
+	.glyphicon, #settings, #locked, #fullscreenButton{
+		width:20px !important; 
+		font-size: 12px !important;
+	}
+	#QRCode{
+		width: 100px;
+		height: 100px;
+	}
+	#QRCode img{
+	    width: 100%;
+    height: 100%;
+}
+}

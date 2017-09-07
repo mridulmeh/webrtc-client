@@ -1,0 +1,276 @@
+html, body{
+	margin:0px;
+	padding: 0px;
+	background:white !important;
+	width: 100% !important;
+	height: 100% !important;
+	font-family: Lato !important;
+	overflow: hidden;
+}
+
+body > .container {
+	padding-top: 30px;
+}
+#QRCode{
+position: absolute;
+	display:none;
+z-index: 2000;
+width: 300px;
+height: 300px;
+top: 30%;
+left: 40%;
+background: white;
+align-items: center;
+justify-content: center;
+}
+#QRCodeImg{
+	
+width: 100%;
+height: 100%;
+padding: 7%;
+}
+.exitQR{
+	position: absolute !important;
+    top: -10px !important;
+	cursor:pointer;
+    right: -10px;
+    background: rgb(40,116,240);
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+}
+.pointerLock{
+	    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 10%;
+    left: 0px;
+}
+.video-player {
+  //  margin-bottom: 1rem;
+	    cursor: none;
+    width: 100%;
+    height: 80%;
+    display: flex;
+	float:left;
+    justify-content: center;
+    align-items: center;
+}
+
+ .symple-player {
+    min-height: 480px;
+}
+.play-btn {
+    position: absolute !important;
+    top: -500% !important;
+z-index:1000;
+    left: 45% !important;
+    width: 100px !important;
+    color: white !important;
+    background: black !important;
+}
+.left, .right {
+    height: 97%;
+    width: 49.5%;
+ min-height: 480px;
+float:left;
+    position: absolute;
+}
+.right{
+	left:49.5%;
+}
+.header, .footer {
+    position: relative;
+	float:left;
+	
+	background :rgba(40,116,240,1);
+    width: 100%;
+	box-shadow: 1px 1px 5px 1px rgb(83, 87, 35);
+    height:10%;
+	z-index:101;
+    /* opacity: 0.3; */
+    /* background: rgba(93, 97, 39, 0.9); */
+}
+.header:hover, .footer:hover {
+    opacity: 1 !important;
+}
+.footerText{
+float: left;
+    color: white;
+    margin: 1%;
+    width: 40%;
+    font-weight: bold;
+	display:none;
+}
+.menu{
+	float: left;
+    color: white;
+    margin: 1.5%;
+    width: 1%;
+    height: 100%;
+    font-weight: 300;
+}
+#menuUp, #menuDown{
+	
+    cursor: pointer;
+    font-size: 20px;
+}
+#menuUp{
+	display:none;
+}
+ul{
+	    list-style-type: none;
+    padding: 4% 7%;
+    font-size: 14px;
+	font-weight: bold;
+
+}
+li{
+	    box-shadow: 2px 2px 2px 0px #21230b;
+    padding: 10px 5px;
+	cursor:pointer;
+
+}
+li:active{
+	  box-shadow: 0px 0px 2px 0px #21230b;
+}
+.connected{
+	display: none;
+	background: #007902;
+box-shadow: 1px 1px 1px 1px #045f05;
+border:1px solid #007902;
+    float: left;
+    height: 100%;
+    width: 60%;
+    font-size: 12px !important;
+}
+.connected span{
+	font-size: 8px;
+    float: left;
+    margin-left: 12px;
+    /* margin: 0; */
+    text-align: center
+}
+.menuDropdown{
+	display:none;
+	position: absolute;
+    width: 300px;
+    background: #7e8610;
+	z-index:120;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #7e8610;
+}
+.gameName{
+	    float: left;
+    width: 20%;
+    height: 60%;
+    border-radius: 10px;
+    margin: 1%;
+    padding-left: 1%;
+    display: flex;
+    font-weight: bold;
+    justify-content: flex-start;
+    align-items: center;
+    background: #21230b;
+    color: white;
+	
+	
+}
+.player1{
+	    position: relative;
+	z-index:10;
+	margin: 1.2% 5%;
+	float:left;
+	height:50%;
+}
+.player2{
+	    position: relative;
+	float: left;
+	
+	margin: 1.2% -3%;
+	z-index:10;
+}
+
+#ConnectBtn{
+	height:100%;
+}
+#StreamPlayer{
+	height:100%;
+	display:none;
+}
+
+button{
+	background: rgb(126, 134, 16);
+    border: 1px solid  rgba(126, 134, 16, 0.9);
+    cursor: pointer;
+    box-shadow:1px 1px 1px 1px rgba(126, 134, 16, 0.9);
+    color: white !important;
+    font-variant: small-caps !important;
+	font-weight: bold !important;
+    font-size: 14px !important;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+#playerName{
+		background: white;
+	border: 1px solid rgba(93, 97, 39, 0.9);
+	box-shadow: 1px 1px 1px 1px rgba(93, 97, 39, 0.5); 
+	color: rgba(93, 97, 39, 0.9) !important; 
+	font-variant: small-caps; 
+	font-size: 16px; 
+	padding: 5px; 
+	border-radius: 5px;
+}
+#fullscreenButton{
+	float:right;
+	margin-top:1%;
+	margin-right: 2%;
+	cursor:pointer;
+}
+.onlyFull{
+	display:none;
+}
+#locked, #unlocked{
+	display:none;
+}
+#unlocked{
+	    position: absolute;
+    bottom: 3%;
+    right: 2%;
+}
+#settings, #locked{
+	float:right;
+	margin-top:1%;
+	margin-right: 2%;
+	
+	cursor:pointer;
+}
+canvas {
+	display: block;
+
+}
+li a{
+	color: white;
+	
+}
+li a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.information {
+	width: 640px;
+	margin: 0 auto 50px;
+}
+
+#tracker {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	background-color: white;
+}
+
+h1 {
+	font-size: 200%;
+}
