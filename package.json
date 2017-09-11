@@ -7,7 +7,8 @@
     "start": "node app.js",
     "babel": "babel --presets es2015 assets/WebRTC.js -o assets/build/main.bundle.js",
     "prepublish": "npm run babel",
-    "flow": "flow"
+    "flow": "flow",
+    "eslint": "./node_modules/.bin/eslint ...; exit 0"
   },
   "dependencies": {
     "ejs": "~2.3.4",
@@ -24,6 +25,7 @@
     "body-parser": "^1.17.2",
     "csv-parse": "^1.2.0",
     "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -32,8 +34,8 @@
     "flow-bin": "^0.54.1",
     "http": "0.0.0",
     "http-server": "^0.10.0",
+    "iflow-jquery": "^1.2.4",
     "jsdoc": "^3.5.4",
-    "node-rdp": "^1.0.1",
     "request": "^2.81.0",
     "ssh-exec": "^2.0.0"
   }
